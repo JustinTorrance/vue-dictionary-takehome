@@ -4,7 +4,7 @@
     <button 
       @click="$emit('handle-click', synonym.synonym)" 
       class="search-btn">
-      Find Synonym
+      Find Synonyms
     </button>
   </div>
 </template>

@@ -32,10 +32,11 @@ export default {
     }
   }, 
   methods: {
-    handleClick(word) {
-      //add word to query string
+    async handleClick(word)  {
+      const response = await fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${process.env.VUE_APP_APIKEY}`)
+      const data = await response.json()
+      const synonyms = await data[0].meta.syns[0]
       //add word to "Synonyms for"
-      // `${process.env.VUE_APP_APIKEY}`
     }
   }
 }
