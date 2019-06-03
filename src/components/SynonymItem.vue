@@ -1,12 +1,19 @@
 <template>
-  <div>
-    <p>Synonym Item</p>
+  <div class="synonym-item" >
+    <p>{{synonym.synonym}}</p>
+    <button 
+      @click="$emit('handle-click', synonym.synonym)" 
+      class="search-btn">
+      Find Synonym
+    </button>
   </div>
 </template>
 
 <script>
+
 export default {
-  name: "SynonymItem"
+  name: "SynonymItem",
+  props: ["synonym"]
 }
 </script>
 

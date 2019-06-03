@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Synonym Finder</h1>
     <Search />
-    <SynonymsContainer v-bind:synonyms="synonyms" />
+    <SynonymsContainer v-bind:synonyms="synonyms" v-on:handle-click="handleClick" />
   </div>
 </template>
 
@@ -32,7 +32,10 @@ export default {
     }
   }, 
   methods: {
-    
+    handleClick(word) {
+      //add word to query string
+      //add word to "Synonyms for"
+    }
   }
 }
 </script>
