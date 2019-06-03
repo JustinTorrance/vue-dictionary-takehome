@@ -7,17 +7,15 @@
 </template>
 
 <script>
+  import SynonymItem from './SynonymItem'
 
-import SynonymItem from './SynonymItem'
-
-
-export default {
-  name: "SynonymsContainer",
-  components: {
-    SynonymItem
-  },
-  props: ["synonyms"],
-}
+  export default {
+    name: "SynonymsContainer",
+    components: {
+      SynonymItem
+    },
+    props: ["synonyms"],
+  }
 </script>
 
 <style>

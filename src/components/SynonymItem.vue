@@ -10,11 +10,10 @@
 </template>
 
 <script>
-
-export default {
-  name: "SynonymItem",
-  props: ["synonym"]
-}
+  export default {
+    name: "SynonymItem",
+    props: ["synonym"]
+  }
 </script>
 
 <style scoped>

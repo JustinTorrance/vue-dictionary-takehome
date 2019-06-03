@@ -1,45 +1,47 @@
 <template>
   <div id="app">
     <h1>Synonym Finder</h1>
-    <Search />
+    <Search v-on:handle-click="handleClick" />
     <SynonymsContainer v-bind:synonyms="synonyms" v-on:handle-click="handleClick" />
   </div>
 </template>
 
 <script>
+  import Search from './components/Search'
+  import SynonymsContainer from './components/SynonymsContainer'
 
-import Search from './components/Search'
-import SynonymsContainer from './components/SynonymsContainer'
-
-export default {
-  name: 'app',
-  components: {
-    Search,
-    SynonymsContainer
-  },
-  data() {
-    return {
-      synonyms: [
-        {
-          id: 1,
-          synonym: 'happy'
-        },
-        {
-          id: 2,
-          synonym: 'joy'
-        },
-      ]
-    }
-  }, 
-  methods: {
-    async handleClick(word)  {
-      const response = await fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${process.env.VUE_APP_APIKEY}`)
-      const data = await response.json()
-      const synonyms = await data[0].meta.syns[0]
-      //add word to "Synonyms for"
+  export default {
+    name: 'app',
+    components: {
+      Search,
+      SynonymsContainer
+    },
+    data() {
+      return {
+        synonyms: [
+          {
+            id: 1,
+            synonym: 'happy'
+          },
+          {
+            id: 2,
+            synonym: 'joy'
+          },
+        ]
+      }
+    }, 
+    methods: {
+      async handleClick(word)  {
+        console.log('howdy')
+        const response = await fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${process.env.VUE_APP_APIKEY}`)
+        const data = await response.json()
+        const synonyms = await data[0].meta.syns[0]
+        console.log(word)
+        console.log(synonyms)
+        //add word to "Synonyms for"
+      }
     }
   }
-}
 </script>
 
 <style>
