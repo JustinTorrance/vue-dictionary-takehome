@@ -35,6 +35,7 @@ export default {
     handleClick(word) {
       //add word to query string
       //add word to "Synonyms for"
+      // `${process.env.VUE_APP_APIKEY}`
     }
   }
 }
@@ -51,3 +52,5 @@ export default {
 } */
 
 </style>
+
+
