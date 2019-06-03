@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-bind:key="synonym.id" v-for="synonym in synonyms">
-      <SynonymItem v-bind:synonym="synonym" v-on:handle-click="$emit('handle-click', synonym.synonym)" />
+      <SynonymItem v-bind:synonym="synonym" v-on:handle-click="$emit('handle-click', synonym)" />
     </div>
   </div>
 </template>

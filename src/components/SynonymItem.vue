@@ -1,8 +1,8 @@
 <template>
   <div class="synonym-item" >
-    <p>{{synonym.synonym}}</p>
+    <p>{{synonym}}</p>
     <button 
-      @click="$emit('handle-click', synonym.synonym)" 
+      @click="$emit('handle-click', synonym)" 
       class="search-btn">
       Find Synonyms
     </button>

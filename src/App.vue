@@ -18,26 +18,18 @@
     },
     data() {
       return {
-        synonyms: [
-          {
-            id: 1,
-            synonym: 'happy'
-          },
-          {
-            id: 2,
-            synonym: 'joy'
-          },
-        ]
+        synonyms: []
       }
     }, 
     methods: {
       async handleClick(word)  {
-        console.log('howdy')
         const response = await fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${process.env.VUE_APP_APIKEY}`)
         const data = await response.json()
-        const synonyms = await data[0].meta.syns[0]
-        console.log(word)
-        console.log(synonyms)
+        const synonymsList = await data[0].meta.syns[0]
+        console.log(synonymsList)
+        this.synonyms = synonymsList
+
+        //construct object with id and synonym
         //add word to "Synonyms for"
       }
     }
