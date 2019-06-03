@@ -4,6 +4,7 @@
     <Search v-on:handle-click="handleClick" />
     <h3>Synonyms for: {{ searchedWord }}</h3>
     <SynonymsContainer v-bind:synonyms="synonyms" v-on:handle-click="handleClick" />
+    <h3 v-if="emptyReturn">Sorry, there are no synonyms for this word</h3>
   </div>
 </template>
 
@@ -20,18 +21,27 @@
     data() {
       return {
         synonyms: [],
-        searchedWord: ''
+        searchedWord: '',
+        emptyReturn: false
       }
     }, 
     methods: {
       async handleClick(word)  {
-        this.searchedWord = word
-        const response = await fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${process.env.VUE_APP_APIKEY}`)
-        const data = await response.json()
-        const synonymsList = await data[0].meta.syns[0]
-        this.synonyms = synonymsList
-
-        //add word to "Synonyms for"
+        try {
+          this.searchedWord = word
+          const response = await fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${process.env.VUE_APP_APIKEY}`)
+          if (!response.ok) {
+            throw new Error
+          }
+          const data = await response.json()
+          const synonymsList = data[0].meta.syns[0]
+          this.emptyReturn = false
+          this.synonyms = synonymsList
+        } catch(error) {
+            this.synonyms = []
+            this.emptyReturn = true
+            console.log(error.message)
+        }
       }
     }
   }
