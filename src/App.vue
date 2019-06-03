@@ -2,11 +2,12 @@
   <div id="app">
     <h1>Synonym Finder</h1>
     <Search />
-    <SynonymsContainer v-bind:synomyns="synonyms" />
+    <SynonymsContainer v-bind:synonyms="synonyms" />
   </div>
 </template>
 
 <script>
+
 import Search from './components/Search'
 import SynonymsContainer from './components/SynonymsContainer'
 
@@ -18,7 +19,7 @@ export default {
   },
   data() {
     return {
-      synomyns: [
+      synonyms: [
         {
           id: 1,
           synonym: 'happy'
@@ -29,6 +30,9 @@ export default {
         },
       ]
     }
+  }, 
+  methods: {
+    
   }
 }
 </script>
