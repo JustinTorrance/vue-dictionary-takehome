@@ -1,5 +1,6 @@
 <template>
   <div v-bind:searchInput="searchInput">
+    <form @submit.prevent>
       <input 
         type="text"
         placeholder="Search"
@@ -12,8 +13,7 @@
       >
         Search
       </button>
-      <br />
-      <p>{{ searchInput }}</p>
+    </form>
   </div>
 </template>
 
