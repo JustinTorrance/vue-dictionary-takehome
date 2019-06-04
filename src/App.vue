@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <h1>Synonym Finder</h1>
-    <Search v-on:handle-click="handleClick" />
-    <h3>Synonyms for: {{ searchedWord }}</h3>
-    <SynonymsContainer v-bind:synonyms="synonyms" v-on:handle-click="handleClick" />
-    <h3 v-if="emptyReturn">Sorry, there are no synonyms for this word</h3>
+    <div class="app-container">
+      <h1>Thesaurus Park</h1>
+      <Search v-on:handle-click="handleClick" />
+      <h3>Synonyms for: {{ searchedWord }}</h3>
+      <SynonymsContainer v-bind:synonyms="synonyms" v-on:handle-click="handleClick" />
+      <h3 v-if="emptyReturn">Sorry, there are no synonyms for this word</h3>
+    </div>
   </div>
 </template>
+
 
 <script>
   import Search from './components/Search'
@@ -48,7 +51,37 @@
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+  #app {
+    background-image: url('./assets/vue-background.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: 100%;
+    background-repeat: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app-container {
+    border: 1px white solid;
+    height: 500px;
+    width: 500px;
+    box-shadow: inset 0 0 200px 200px rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
 
 

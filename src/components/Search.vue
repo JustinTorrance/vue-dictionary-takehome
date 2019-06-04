@@ -31,7 +31,11 @@
   }
 </script>
 
-<style scoped>
+<style>
+
+  .search-btn {
+
+  }
 
 </style>
 ±
