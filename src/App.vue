@@ -3,7 +3,7 @@
     <div class="app-container">
       <h1 class="title">Thesaurus Park</h1>
       <Search v-on:handle-click="handleClick" />
-      <h3>Synonyms for: {{ searchedWord }}</h3>
+      <h3 class="synonyms-for" >Synonyms for: {{ searchedWord }}</h3>
       <SynonymsContainer v-bind:synonyms="synonyms" v-on:handle-click="handleClick" />
       <h3 v-if="emptyReturn">Sorry, there are no synonyms for this word</h3>
     </div>
@@ -93,6 +93,12 @@
     color: #000;
     margin-top: 20px;
   }
+
+  .synonyms-for {
+    text-shadow: 2px 2px #999;
+    font-size: 2rem;
+  }
+
 </style>
 
 

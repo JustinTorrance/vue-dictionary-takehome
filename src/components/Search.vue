@@ -41,7 +41,7 @@
   font-size: 1.7rem;
   border-radius: 20px 0 0 20px ;
   outline: none;
-  padding-left: 10px;
+  padding-left: 12px;
   border: none;
 }
 

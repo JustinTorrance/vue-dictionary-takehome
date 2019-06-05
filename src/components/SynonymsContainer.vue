@@ -23,6 +23,8 @@
   .wrapper {
     margin: 20px 0;
     overflow-y: scroll;
+    width: 300px;
+    border-radius: 20px;
   }
 
 </style>
