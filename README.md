@@ -10,8 +10,8 @@ Deployed on Heroku at https://vue-dictionary-takehome.herokuapp.com/
 
 ## Project setup
 
-Clone down this repo
-`npm install`
+Clone down this repo  
+`npm install`  
 `npm run serve`
 
 ## Tech Stack
