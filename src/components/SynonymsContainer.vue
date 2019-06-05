@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div v-bind:key="synonym.id" v-for="synonym in synonyms">
       <SynonymItem v-bind:synonym="synonym" v-on:handle-click="$emit('handle-click', synonym)" />
     </div>
@@ -18,6 +18,11 @@
   }
 </script>
 
-<style>
+<style scoped>
+
+  .wrapper {
+    margin: 20px 0;
+    overflow-y: scroll;
+  }
 
 </style>
