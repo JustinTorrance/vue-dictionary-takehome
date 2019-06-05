@@ -95,7 +95,7 @@
   }
 
   .synonyms-for {
-    text-shadow: 2px 2px #999;
+    text-shadow: 2px 2px 2px #999;
     font-size: 2rem;
   }
 
