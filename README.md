@@ -1,29 +1,18 @@
-# vue-dictionary-takehome
+# Thesaurus Park
+
+Search for synonyms by entering a word and clicking search. A list of synonyms will be displayed. The synonyms are clickable, and will return synonyms for that clicked word. This app is powered by the Merriam-Webster Thesaurus API.
+
+Deployed on Heroku at https://vue-dictionary-takehome.herokuapp.com/
 
 ## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Clone down this repo
+`npm install`
+`npm run serve`
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Tech Stack
+Vue.js
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Author
+Justin Torrance
+LinkedIn: https://www.linkedin.com/in/justintorrance/
